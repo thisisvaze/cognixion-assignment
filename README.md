@@ -24,4 +24,4 @@ such as:
 
 ## Assumptions for this assignment
 1. This prototype was aimed to visualize how an interaction with a real-world object could look like with ChatGPT responses to help understand the object.
-2. I wanted to use voice interactions as they would be more natural and get responses as speech output as well but have restricted to a chat-based scroll view.
+2. I wanted to use voice interactions as they would be more natural and get responses as speech output as well but have restricted to a chat-based scroll view due to time constraints and based on the assignment description.
