@@ -1,5 +1,6 @@
 # Cognixion Assignment
 
+![](https://github.com/thisisvaze/cognixion-assignment/blob/main/screenshot.png)
 ## Usage instructions
 1. Download and Open in Unity 2022.3.(13+)f1 version. I used 2022.3.13f1 with ARFoundation 5.0.7.
 2. Can be built for iOS / Android, use in Portrait mode only.
