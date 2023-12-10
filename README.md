@@ -5,7 +5,7 @@
 ## Usage instructions
 1. Download and Open in Unity 2022.3.(13+)f1 version. I used 2022.3.13f1 with ARFoundation 5.0.7.
 2. Can be built for iOS / Android, use in Portrait mode only.
-3. Build ```Assignment/CognixionARScene```
+3. Build ```Assignment/Scenes/CognixionARScene```
 4. Scan surroundings to get planes.
 5. Tap on the screen to add a 3D model of an Apple on any plane. (This would represent a real apple kept on a table.)
 6. Tap anywhere else except the Apple's model to move the Apple to the new location on a plane.
