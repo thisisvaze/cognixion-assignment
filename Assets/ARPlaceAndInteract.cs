@@ -38,6 +38,9 @@ public class ARPlaceAndInteract : MonoBehaviour
 
     void Update()
 {
+     // If isLoading is true, ignore touch input
+    if (isLoading)
+        return;
     if(Input.touchCount > 0)
     {
         Touch touch = Input.GetTouch(0);
@@ -57,8 +60,10 @@ public class ARPlaceAndInteract : MonoBehaviour
                 if(hit.collider.gameObject.TryGetComponent<ARPlane>(out arPlane))
                 {
                     
-                   
-                        // If the raycast hit an ARPlane, move or spawn the object
+                    // Check if the plane is horizontal
+                    if (arPlane.alignment == PlaneAlignment.HorizontalDown || arPlane.alignment == PlaneAlignment.HorizontalUp)
+                    {
+                        // If the raycast hit a horizontal ARPlane, move or spawn the object
                         if (spawnedObject == null)
                         {
                             spawnedObject = Instantiate(m_PlacedPrefab, hit.point, Quaternion.identity);
@@ -67,13 +72,15 @@ public class ARPlaceAndInteract : MonoBehaviour
                         {
                             spawnedObject.transform.position = hit.point;
                         }
+                    }
 
                 }
                 else if(hit.collider.gameObject == spawnedObject)
                 {
+                    // Add user message
+                    openAIController.AddUserMessage("Tell me nutritional facts about an apple.");
 
-                    Debug.Log("OpenAI Request sent");
-                     // Simulate sending a request to OpenAI
+                     // Send request to OpenAIController
                     openAIController.GetShortResponseForObject(() => 
                     {
                         // This is a callback that should be called when the OpenAI text is ready
